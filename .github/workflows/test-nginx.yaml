@@ -15,4 +15,4 @@ jobs:
       run: |
         kubectl get no
         kubectl get pods -A -o wide
-        kubectl apply -f deploy/nginx.yaml
+        kubectl apply -f ${{ github.workspace }}/deploy/nginx.yaml
