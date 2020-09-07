@@ -10,9 +10,12 @@ jobs:
     - uses: balchua/microk8s-actions@v0.1.2
       with:
         channel: 'latest/stable'
-    - name: Test MicroK8s
-      id: myactions
+    - name: Test nginx
+      id: microk8snginx
       run: |
+        set -x
+        ls
+        pwd
         kubectl get no
         kubectl get pods -A -o wide
         kubectl apply -f ${{ github.workspace }}/deploy/nginx.yaml
