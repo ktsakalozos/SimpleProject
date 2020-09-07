@@ -5,11 +5,13 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    name: A job to install MicroK8s
+    name: Install MicroK8s
     steps:
     - uses: balchua/microk8s-actions@v0.1.2
       with:
         channel: 'latest/stable'
+    - name: Checkout
+      uses: actions/checkout@v2
     - name: Test nginx
       id: microk8snginx
       run: |
