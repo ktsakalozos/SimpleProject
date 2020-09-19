@@ -13,6 +13,6 @@ jobs:
     - name: Test MicroK8s
       id: myactions
       run: |
-        kubectl get no
+        kubectl get no -o wide
         kubectl get pods -A -o wide
         kubectl apply -f ${{ github.workspace }}/deploy/nginx.yaml
